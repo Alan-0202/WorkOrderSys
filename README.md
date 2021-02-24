@@ -29,15 +29,19 @@ ______________________________v1
  
 ## Create Users 
 command: "shell"  -> "from django.contrib.auth.models import User"
+
+```angular2html
 def create_user(name):
     for i in range(1,20):
         username = "{}-{}".format(name, i)
-<<<<<<< ecdcc9369d094ace570623ef9b4ce28dde187fed
+
         User.objects.create__user(username, "{}@alan.com", "1234")
-=======
+
         User.objects.create__user(username, "{}@alan.com".format(name), "1234")
->>>>>>> add_user_api
+```
+
+add_user_api
         
  Invode: create_user(name)
- 
+
  
