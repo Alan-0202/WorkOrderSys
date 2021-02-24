@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^', include(route.urls))
 ]
 
+
 views.py:
 from rest_framework import viewsets
 class IdcViewset_v1(viewsets.ModelViewSet):
