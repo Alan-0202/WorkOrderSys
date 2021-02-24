@@ -22,3 +22,8 @@ class IdcViewset_v1(viewsets.ModelViewSet):
 
 ______________________________v1
 
+
+------------------------For User API-----------------------------------
+# Use the Django auth_user
+ command "dbshell" and desc auth_user;
+ 
