@@ -25,5 +25,15 @@ ______________________________v1
 
 ------------------------For User API-----------------------------------
 # Use the Django auth_user
- command "dbshell" and desc auth_user;
+ command: "dbshell" and desc auth_user;
+ 
+## Create Users 
+command: "shell"  -> "from django.contrib.auth.models import User"
+def create_user(name):
+    for i in range(1,20):
+        username = "{}-{}".format(name, i)
+        User.objects.create__user(username, "{}@alan.com", "1234")
+        
+ Invode: create_user(name)
+ 
  
