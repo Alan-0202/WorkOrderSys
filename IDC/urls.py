@@ -13,12 +13,35 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+# from django.contrib import admin
+# from django.urls import path
+# from django.conf.urls import url, include
+#
+# urlpatterns = [
+#     url(r'^admin/', admin.site.urls),
+#     url(r'^', include('idc.urls'))
+#
+# ]
+
+
+# All use this as the route table
+
 from django.conf.urls import url, include
 
+# Delicate the DefaultRouter
+from rest_framework.routers import DefaultRouter
+
+# for idc register
+from idc.views import IdcViewset_v1
+
+# for user register
+from user.views import UserViewSet
+
+route = DefaultRouter()
+route.register("idcs", IdcViewset_v1, basename="idcs")
+route.register("users", UserViewSet, basename="users")
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('idc.urls'))
+    url(r'^', include(route.urls))
 
 ]
